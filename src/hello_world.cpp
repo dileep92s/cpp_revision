@@ -12,6 +12,6 @@ int main()
     cout << "hello, whats your name: " << endl;
     cin >> name;
     cout << "hello " << name << endl;
-    
+
     return 0;
 }
