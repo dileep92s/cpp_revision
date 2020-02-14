@@ -8,10 +8,16 @@ using namespace std;
 int main()
 {
     string name; 
+    string location;
+    int age;
 
     cout << "hello, whats your name: " << endl;
     cin >> name;
-    cout << "hello " << name << endl;
+    cout << "hello, whats your age: " << endl;
+    cin >> age;
+    cout << "hello, where do you stay: " << endl;
+    cin >> location;
+    cout << "hello " << name << ". Your age is " << age << " and you stay in " << location << endl;
 
     return 0;
 }
