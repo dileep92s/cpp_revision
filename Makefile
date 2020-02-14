@@ -8,10 +8,16 @@ CXXFLAGS=-std=c++14 -I${INC} -Werror -Wall
 hello_world: src/hello_world.cpp
 	g++ src/hello_world.cpp -o bin/hello_world
 
-class: ${SRC}/class.cpp
+class_1: ${SRC}/class_1.cpp
+	${CXX} ${CXXFLAGS} $^ -o ${BIN}/$@
+
+class_2: ${SRC}/class_2.cpp
 	${CXX} ${CXXFLAGS} $^ -o ${BIN}/$@
 
 inheritance: ${SRC}/inheritance.cpp
+	${CXX} ${CXXFLAGS} $^ -o ${BIN}/$@
+
+namespace : ${SRC}/namespace.cpp
 	${CXX} ${CXXFLAGS} $^ -o ${BIN}/$@
 
 check:

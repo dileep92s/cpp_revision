@@ -41,7 +41,6 @@ class Animal
         }
 };
 
-
 int main()
 {
     Animal ani_1("ani_1", 1);   // parameterized
