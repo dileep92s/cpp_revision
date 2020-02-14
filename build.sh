@@ -6,10 +6,11 @@ echo --------------------------
 echo make ${app} 
 echo --------------------------
 echo 
-make ${app} 
+make ${app}
+errval=$?
 echo 
 
-if [ $? = 0 ]
+if [ $errval = 0 ]
 then
     echo --------------------------
     echo ./bin/${app:-hello_world}

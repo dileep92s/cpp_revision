@@ -4,6 +4,9 @@
 // use some exsting namespace
 using namespace std;
 
+// only string class from std
+using std::string;
+
 int x = 1;
 
 namespace ns_1
@@ -16,9 +19,17 @@ namespace ns_1
     }
 }
 
+
+namespace
+{
+    // acts as static global variable; the x without any namespace has high prio
+    int x = 5; 
+}
+
 int main()
 {
-    int x = 4;
+    int x = 4; // if commented leads to error - reference to ‘x’ is ambiguous (global)
+    string xyz;
 
     cout << x << endl; // prints 4
     cout << ::x << endl; // prints 1

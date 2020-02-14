@@ -4,11 +4,13 @@
 
 using namespace std;
 
+// declaration in hpp but definition in cpp
 Car::Car():make_u32(2020)
 {
     cout << "Car Constructor" << endl;
 }
 
+// classname becomes like namespace
 void Car::printInfo()
 {
     cout << "make : " << make_u32 << endl;
