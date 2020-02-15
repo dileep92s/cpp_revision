@@ -26,6 +26,9 @@ refrences : ${SRC}/refrences.cpp
 structs : ${SRC}/structs.cpp
 	${CXX} ${CXXFLAGS} $^ -o ${BIN}/$@
 
+access : ${SRC}/access.cpp
+	${CXX} ${CXXFLAGS} $^ -o ${BIN}/$@	
+
 check:
 	cppcheck ${SRC}
 

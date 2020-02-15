@@ -42,6 +42,17 @@ class F:public E
         virtual void info();
 };
 
+struct G
+{
+    mutable int x;
+    int y;
+
+    G():x(0),y(0)
+    {
+
+    }
+};
+
 
 using std::cout;
 using std::endl;
@@ -55,6 +66,10 @@ int main()
     cout << sizeof(E) << endl;  // 8
     cout << sizeof(F) << endl;  // 8
     cout << sizeof(void*) << endl;  // 8
+
+    const G g_obj;
+    g_obj.x = 2; // OK
+    // g_obj.y = 2; // error 
 
     return 0;
 }
