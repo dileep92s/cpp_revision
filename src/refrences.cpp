@@ -8,7 +8,7 @@ int main()
     // int &z; // error
     // int &z = 2; // error
     // int &z = &x; // error
-    int *z; 
+    int *z = &x; 
     std::cout << "y : " << y << std::endl;
 
     *z = 4;

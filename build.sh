@@ -13,10 +13,10 @@ echo
 if [ $errval = 0 ]
 then
     echo --------------------------
-    echo ./bin/${app:-hello_world}
+    echo ./bin/${app:-test}
     echo --------------------------
     echo 
-    ./bin/${app:-hello_world}
+    ./bin/${app:-test}
     echo 
 
 fi 
