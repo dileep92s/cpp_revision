@@ -25,6 +25,31 @@ void addLinkBegin(Link **link, int id)
     }
 }
 
+void insertLink(Link **head, int pos, int data)
+{
+    Link *ptr = *head;
+
+    if(pos == 0)
+    {
+        addLinkBegin(head, data);
+        return;
+    }
+        
+    while(ptr && --pos)
+    {
+        ptr = ptr->next;
+    }
+    
+    if(ptr)
+    {
+        ptr->next = new Link{data, ptr->next};
+    }
+    else
+    {
+        addLinkEnd(head, data);
+    }
+}
+
 void addLinkEnd(Link **link, int id)
 {
     Link *new_link = new Link;
@@ -98,9 +123,29 @@ void signleLinkedListEndDemo()
     deleteLinks(&head);
 }
 
+void signleLinkedListInsertDemo()
+{
+
+    Link *head = nullptr;
+
+    addLinkEnd(&head, 1);
+    addLinkEnd(&head, 2);
+    addLinkEnd(&head, 3);
+    addLinkEnd(&head, 4);
+
+    insertLink(&head, 9, 33);
+    insertLink(&head, 0, 33);
+    insertLink(&head, 2, 33);
+
+    printLinks(head);
+    deleteLinks(&head);
+
+}
+
 int main()
 {
     signleLinkedListBeginDemo();
     signleLinkedListEndDemo();
+    signleLinkedListInsertDemo();
     return 0;
 }
