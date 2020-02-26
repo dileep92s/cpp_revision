@@ -68,6 +68,15 @@ void fibmemo(int z)
 }
 
 
+void foo(const int &x)
+{
+    cout << x << endl;
+}
+
+void goo(int &x)
+{
+    cout << x << "\n";
+}
 
 int main()
 {
@@ -92,6 +101,29 @@ int main()
 
     // fibonacci memo
     fibmemo(10);
+
+    // endian
+    uint32_t k = 0x550000aa;
+    uint8_t *l;
+    // l = static_cast<uint8_t*>(&k); //doesnt work
+    l = reinterpret_cast<uint8_t*>(&k); //doesnt work
+    cout << hex << (int)*l << "\n";
+
+    //const 
+    const int t = 8;
+    // int *u;
+    
+    // u = &t; // doesnt work
+    // u = static_cast<const int*>(&t); // doesnt work
+    // u = const_cast<const int*>(&t); // doesnt work
+
+    // goo(t); // doesnt work
+    goo(const_cast<int&>(t)); // works
+    // goo(static_cast<int&>(t)); // doesnt works
+
+
+    int y = 3;
+    foo(y);
 
 
 
